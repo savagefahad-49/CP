@@ -1,0 +1,27 @@
+//Bear Limak wants to become the largest of bears, or at least to become larger than his brother Bob.
+At the start, Limak and Bob weigh a and b respectively. It's guaranteed that Limak's weight is smaller than or equal to his brother's weight.
+Limak eats a lot and his weight is tripled after every year, while Bob's weight is doubled after every year.
+in this problem we have to figure out after how many full years will Limak become strictly larger (strictly heavier) than Bob.
+
+
+#include<iostream>
+using namespace std;
+int main(){
+int a,b;
+int c=0;
+cin>>a;
+cin>>b;
+if(a>b){
+    cout<<0;
+return 0;
+}
+for(int y=1;a<=b;y++){
+a =a*3;
+b = b*2;
+c++;
+}
+cout<<c;
+return 0;
+}
+
+
