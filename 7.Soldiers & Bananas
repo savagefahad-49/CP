@@ -1,0 +1,27 @@
+//A soldier wants to buy w bananas in the shop.
+He has to pay k dollars for the first banana, 2k dollars for the second one and so on (in other words, he has to pay i·k dollars for the i-th banana)
+in this problem we have to find that how much money has to be borrowed by a person from his friend
+to buy w bananas if he himself has n dollars.
+
+
+7.Soldiers & Bananas
+#include <iostream>
+using namespace std;
+int main() {
+    int n,k,w;
+    int sum = 0;
+    cin>>k;
+    cin>>n;
+    cin>>w;
+    for(int i=0;i<w;i++){
+        sum = sum + (i + 1)*k;
+    }
+    if(n>sum){
+        cout<<0;
+    }
+    else{
+        cout<<sum - n;
+    }
+ 
+    return 0;
+}
