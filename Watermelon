@@ -1,0 +1,23 @@
+//It is a simple-looking but interesting question about the distribution of 
+watermelon b/w 2 people,the weights when distributing should an even number like
+if watermelon weights 100kg then both the guys will have 50,50kg of watermelon
+which is an "even" distribution so yeah that will print "YES" for 100 kg watermelon
+
+Note:It will print "YES" for every even weight but not for 2 kg because when distributing
+2 kg it becomes 1kg on both sides which is "odd" distribution
+
+
+Solution:
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    int w;
+    cin >> w;
+    if (w % 2 == 0 && w > 2) {
+        cout << "YES";
+    } else {
+        cout << "NO";
+    }
+    return 0;
+}
