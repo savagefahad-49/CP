@@ -1,0 +1,17 @@
+//in this problem,you are given MxN size of rectectangle on which
+you have to compile Dominoes of 2x1(Single Piece)As much as possible
+here is the solution to the problem that how many dominoes can be piled up
+to the desired rectangular slab.
+
+
+
+Solution:
+#include<iostream>
+using namespace std;
+int main(){
+    int a,b;
+    cin >> a >> b;
+    int c = (a*b)/2;
+    cout<<c;
+    return 0;
+}
