@@ -1,0 +1,27 @@
+//Three person go to a hackathon where theyre given n problems:
+they've decided that if ant 2 of them knows the solution then we will attempt
+the problem otherwise skip
+we have to find the no. of problems they can solve there
+in first line there are n number of problems then,for every problem
+there's 3 inputs(1 for Knows the solution and 0 for doesnt know)
+
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n,p,v,t,sum;
+    int solve = 0;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>p;
+        cin>>v;
+        cin>>t;
+        sum = p + v + t;
+        if(sum>=2){
+            solve++;
+        }
+    }
+    cout<<solve;
+ 
+    return 0;
+}
