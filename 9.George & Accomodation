@@ -1,0 +1,25 @@
+//Two Persons want to live in the same room. The Place or a Hotel has n rooms in total.
+At the moment the i-th room has p people living in it and the room can accommodate q people in total (p ≤ q).
+in this problem we have to find, how many rooms has free place for both the persons.
+
+
+
+
+
+Solution:
+#include<iostream>
+using namespace std;
+int main(){
+int n,p,q;
+int r=0;
+cin>>n;
+for(int a=0;a<n;a++){
+cin>>p;
+cin>>q;
+if(q-p>1){
+r++;
+}
+}
+cout<<r;
+return 0;
+}
