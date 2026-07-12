@@ -4,7 +4,7 @@ if watermelon weights 100kg then both the guys will have 50,50kg of watermelon
 which is an "even" distribution so yeah that will print "YES" for 100 kg watermelon
 
 Note:It will print "YES" for every even weight but not for 2 kg because when distributing
-2 kg it becomes 1kg on both sides which is "odd" distribution
+2 kg it becomes 1kg on both sides which is "odd" distribution.
 
 
 Solution:
