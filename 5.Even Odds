@@ -1,0 +1,26 @@
+//A Person take an n number then he makes his on sequence:
+all odd numbers from 1 to n then
+all even numbers from 1 to n
+We have to determine which number is located at kth-position
+like if n=10 and k=7 then the sequence would be;
+1,3,5,7,9,2,4,6,8,10
+here as you can see 4 is the number placed at 7-th position so the program 
+below prints 4.
+
+
+Solution:
+#include <iostream>
+using namespace std;
+ 
+int main() {
+    long long n, k;
+    cin >> n >> k;
+    long long count_odds = (n + 1) / 2;
+    if (k <= count_odds){
+        cout << (2 * k) - 1 << endl;
+    } else {
+        long long k_even = k - count_odds;
+        cout << 2 * k_even << endl;
+    }
+    return 0;
+}
