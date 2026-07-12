@@ -1,0 +1,33 @@
+//So the Question is how many student will go in the next round if we already know their marks for the initial round
+So the contestant who got equal or higher marks than the k-th place person will advance to the next round
+
+Here's the solution to that Problem using basic arrays and then using loop to identify how many
+persons make it into the next round
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() {
+    int n,k;
+    int pass=0;
+    cin>> n >> k;
+    if(n<k){
+        return 0;
+    }
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int a = arr[k-1];
+    for(int o=0;o<n;o++){
+        if(arr[o]>=a && arr[o]>0){
+            pass++;
+        }
+    }
+    cout<<pass;
+    
+ 
+    return 0;
+}
