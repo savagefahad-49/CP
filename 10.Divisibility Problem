@@ -1,0 +1,42 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+int main(){
+    int a;
+    int b;
+    int t;
+    cin>>t;
+    vector<int> counter(t);
+    for(int w=0;w<t;w++){
+        cin>>a;
+        cin>>b;
+        if(a%b==0){
+        counter[w]=0;
+    }
+    else{
+        int con=0;
+    con = b - (a % b);
+    counter[w]=con;
+    }
+  }
+for(int x:counter){
+    cout<<x<<"\n";
+}
+    
+    return 0;
+}
+
+//Simplified Version
+
+   #include<iostream>
+   using namespace std;
+   int main(){
+       int t;
+       cin >> t;
+       while(t--){
+           int a, b;
+           cin >> a >> b;
+           cout << (b - a % b) % b << "\n";          //we can print one test case answer with the calaculation done no need to store answers in arrays
+       }
+       return 0;
+   }
