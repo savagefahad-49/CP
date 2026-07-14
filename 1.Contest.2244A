@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main(){
+    int t;
+    cin >> t;                    
+ 
+    while(t--){                 
+        int n;
+        string s;
+        cin >> n >> s;           
+ 
+        int best = 0;   
+        int cur = 0;    
+ 
+        for(char c : s){
+            if(c == '#'){
+                cur++;                  
+                best = max(best, cur);  
+            } else {
+                cur = 0;   
+            }
+        }
+ 
+        int ans = (best + 1) / 2;   
+        cout << ans << "\n";
+    }
+}
