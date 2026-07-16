@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+int main(){
+    int n, num;
+    cin >> n;
+    num = n*3;
+    int vec[num];
+    int arr[3] = {0, 0, 0};   
+ 
+    for(int a = 0; a < n; a++){   
+        int vec_cou = a*3;
+        cin >> vec[vec_cou];
+        cin >> vec[vec_cou+1];
+        cin >> vec[vec_cou+2];
+    }
+ 
+    for(int s = 0; s < num; s++){
+        arr[s % 3] =arr[s % 3] + vec[s];
+    }
+ 
+    if(arr[0]==0 && arr[1]==0 && arr[2]==0){
+        cout << "YES";
+    } else {
+        cout << "NO";
+    }
+    return 0;
+}
