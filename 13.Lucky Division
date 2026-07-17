@@ -1,0 +1,69 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string num;
+    cin>>num;
+    int count = 0;
+    for(int a=0;a<num.size();a++){
+        if(num[a] == '4' || num[a] == '7'){     //(num[a] == '4' || '7') '||' needs a boolean on each side, so '7' alone gets treated as "is this non-zero?"                                         
+            count++;                            // — which is always true. So this condition is always true, no matter what character num[a] actually is.
+        }
+    }
+    unsigned long long n = stoull(num);         //Explanation Below
+    if(count == num.size()){
+        cout<<"YES";
+    }
+    else if( n % 4 == 0 || n % 7 == 0){
+        cout<<"YES";
+    }
+    else{
+        cout<<"NO";
+    }
+    return 0;
+}
+
+// "stoull()" stands for "string to unsigned long long". 
+// It's a standard C++ function that converts a string containing digits into an actual numeric value.
+
+// This is what stoull does internally — useful to know since it avoids relying on a library function:
+//          unsigned long long n = 0;
+//          for(int a = 0; a < num.size(); a++){
+//              n = n * 10 + (num[a] - '0');
+//          }
+
+// Let's trace through with num = "247" as an example.
+
+//          unsigned long long n = 0;
+//          for(int a = 0; a < num.size(); a++){
+//              n = n * 10 + (num[a] - '0');
+//          }
+
+//      Part 1: num[a] - '0'
+//        num[a] is a char, like '2'. In ASCII, characters '0' through '9' are stored as consecutive numbers — '0' is 48, '1' is 49, '2' is 50, and so on.
+//        So '2' - '0' = 50 - 48 = 2, the actual integer value. This trick converts any digit character into its numeric value.
+//      Part 2: n * 10 + digit 
+//        This shifts everything already in n one place to the left (multiplying by 10) and slots the new digit into the ones place.  
+
+//                  Trace for num = "247":
+// a | num[a] | digit value | n before | n = n*10 + digit   | n after
+// 0 |  '2'   |      2      |    0     |    0*10 + 2        |   2
+// 1 |  '4'   |      4      |    2     |    2*10 + 4        |   24
+// 2 |  '7'   |      7      |   24     |    24*10 + 7       |   247
+ 
+// If you write:
+//      n = num[a] - '0';
+//      you're overwriting n completely on every loop iteration, instead of building on top of what's already there.
+//      Trace it with num = "247":
+
+//          unsigned long long n = 0;
+//          for(int a = 0; a < num.size(); a++){
+//              n = (num[a] - '0');
+//          }
+
+// After the loop, n is just 7 — the last digit. Everything before it (2 and 4) got thrown away,
+// because each assignment replaces the old value of n instead of using it.
+
+// So the short version: n = num[a] - '0' has no memory of previous iterations.
+//  n = n*10 + (num[a]-'0') carries forward everything you've built so far.
+//  You need the second form because a number isn't just its last digit — it's all its digits combined by place value.
