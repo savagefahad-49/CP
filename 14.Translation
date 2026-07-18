@@ -1,0 +1,26 @@
+#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main(){
+    string str_1,str_2,str_3;
+    cin>>str_1;
+    cin>>str_2;
+    //Simple Reverse
+
+     //for(int i=str_1.size()-1;i>=0;i--){
+     //   str_3.push_back(str_1[i]);
+     //}
+     
+    //Use Reverse here
+    str_3 = str_1;
+    reverse(str_3.begin(),str_3.end());
+
+     if(str_3 == str_2){
+        cout<<"YES";
+     }
+     else{
+        cout<<"NO";
+     }
+    return 0;
+}
