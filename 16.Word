@@ -1,0 +1,29 @@
+#include<iostream>
+#include<vector>
+#include<cctype>
+using namespace std;
+int main(){
+    int lower = 0,upper = 0;
+    string name;
+    cin>>name;
+    for(int i = 0; i < name.length() ; i++){
+        if(islower(name[i])){
+        lower++;
+        }
+        else{
+            upper++;
+        }
+    }
+    if(lower>upper || lower == upper){
+        for(int r=0;r<name.length();r++){
+            name[r] = tolower(name[r]);
+        }
+    }
+        else{
+            for(int r=0;r<name.length();r++){
+            name[r] = toupper(name[r]);
+        }
+        }
+        cout<<name;
+    return 0;
+}
