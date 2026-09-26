@@ -1,0 +1,29 @@
+#include<iostream>
+#include<string>
+using namespace std;
+int main(){
+    string name_1;
+    string name_2;
+    cin>>name_1;
+    cin>>name_2;
+    for(int a=0;a<name_1.length();a++){
+       name_1[a]=tolower(name_1[a]);
+    }
+    for(int i=0;i<name_2.length();i++){
+       name_2[i]=tolower(name_2[i]);
+    }
+    for(int r=0;r<name_2.length();r++){
+        if(name_1[r]<name_2[r]){
+            cout<<"-1";
+            return 0;
+        }
+        if(name_1[r]>name_2[r]){
+            cout<<"1";
+            return 0;
+        }
+    }
+    if(name_1==name_2){
+            cout<<"0";
+        }
+    return 0;
+}
